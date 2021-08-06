@@ -9,10 +9,10 @@ app.use((req,res, next) => {
     next();
 })
 
-app.use(express.json()); // returns middleware that only parses JSON
+app.use(express.json());
 app.use(cors());
 
-// Routes
+
 app.get("/", (req, res) => {
   res.send("Welcome to the Budgeting app!");
 });

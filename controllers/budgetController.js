@@ -24,9 +24,6 @@ const validateBody = (req, res, next) => {
 
 budgets.use(validateUrl);
 
-//we use the router const to GET the json file so we use 'res.json'
-// in paranethesis we add the const of the file name
-//ROUTES
 budgets.get("/", (req, res) => {
   res.status(200).json(budgetsArray);
 });
@@ -42,7 +39,6 @@ budgets.get("/:arrayIndex", (req, res) => {
 
 budgets.post("/", validateBody, (req, res) => {
   budgetsArray.push(req.body);
-  //send back the new resource as confirmation
   res.json(budgetsArray[budgetsArray.length - 1]);
 });
 
